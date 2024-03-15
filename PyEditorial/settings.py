@@ -21,12 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^rz9wrbb#ig!tl)4c$!o_^01ef8(rtxe(i()$ph61$8+mh^v_8'
+SECRET_KEY ='^rz9wrbb#ig!tl)4c$!o_^01ef8(rtxe(i()$ph61$8+mh^v_8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS')
 
 
 # Application definition
@@ -90,12 +90,12 @@ WSGI_APPLICATION = 'PyEditorial.wsgi.application'
 # If you need to use Postgresql, you can use this section
 DATABASES = {
       'default': {
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'django_word',
-          'USER': 'admin',
-          'PASSWORD': 'amdin',
-          'HOST': 'db',
-         'PORT': '5432',
+          'ENGINE': os.getenv( "DB_ENGINE" ) , 
+          'NAME': os.getenv( "DB_NAME" ),
+          'USER': os.getenv("SQL_USER"),
+          'PASSWORD': os.getenv("SQL_PASS"),
+          'HOST': os.getenv("DB_HOST"),
+         'PORT': os.getenv("DB_PORT"),
     }
  }
 
