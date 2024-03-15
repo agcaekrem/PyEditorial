@@ -19,7 +19,7 @@
 
 ### After meeting the prerequisites;
 
-- Pull the project on your local with **"git pull https://github.com/agcaekrem/PyEditorial.git"** and then navigate to the project directory.
+- Pull the project on your local with **"git clone https://github.com/agcaekrem/PyEditorial.git"** and then navigate to the project directory.
 
 - Then run the script with the command **./runtime.sh**, if you get a permission error please run the command; **chmod +x ./runtime.sh**
 
